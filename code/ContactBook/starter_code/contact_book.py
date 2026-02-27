@@ -14,6 +14,7 @@ Complete the TODO sections below to finish the application.
 """
 
 from datetime import datetime
+import time
 
 # =============================================================================
 # Initialize Contact Book
@@ -92,6 +93,7 @@ def display_all_contacts(contacts):
             f"{contact['name'].ljust(16)}| "
             f"{contact['phone'].ljust(13)}| "
             f"{contact['category']}"
+            f"{contact['created_at']}"
         )
     # TODO: Print footer
     print("=" * 50)
@@ -262,16 +264,17 @@ def display_statistics(contacts):
             other_ct += 1
     
     print("By Category:")
-    print("  - Friends: " + friend_ct)
-    print("  - Family: " + fam_ct)
-    print("  - Work: " + work_ct)
-    print("  - Other: " + other_ct)
+    print(f"  - Friends: {friend_ct}")
+    print(f"  - Family: {fam_ct}")
+    print(f"  - Work: {work_ct}")
+    print(f"  - Other: {other_ct}")
     
     # TODO: Find most recently added contact
+    most_recent = contacts[0]
     for x in range(1, len(contacts)):
         if contacts[x]["created_at"] > contacts[x - 1]["created_at"]:
             most_recent = contacts[x]
-    print("    Most Recent: " + most_recent["name"] + " (added " + most_recent["created_at"] + ")")
+    print(f"    Most Recent: {most_recent['name']} (added {most_recent['created_at']})")
     print("-------------------------------")
 
 
@@ -350,7 +353,10 @@ if __name__ == "__main__":
     # print(update_contact(contacts, "111-181-1111", 'email', "sammyyyyyyyyy@aol.com")) # - DONE
     # delete_contact(contacts, "111-111-1111") # - DONE
     # display_all_contacts(contacts) # - DONE
-
+    # display_statistics(contacts) # - DONE
+    # time.sleep(3)
+    # add_contact(contacts, "Newest", "111-111-1111", "ssmith@example.com", "work")
+    # display_all_contacts(contacts) # - DONE
     # display_statistics(contacts)
     # etc.
     
