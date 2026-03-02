@@ -93,7 +93,6 @@ def display_all_contacts(contacts):
             f"{contact['name'].ljust(16)}| "
             f"{contact['phone'].ljust(13)}| "
             f"{contact['category']}"
-            f"{contact['created_at']}"
         )
     # TODO: Print footer
     print("=" * 50)
@@ -127,7 +126,7 @@ def display_contact_details(contact):
 # TODO: Task 3 - Search Functionality
 # =============================================================================
 
-def search_by_name(contacts, query):
+def search_by_name(contacts, query) -> list:
     """
     Find contacts whose name contains the query string.
     Case-insensitive search.
@@ -140,7 +139,7 @@ def search_by_name(contacts, query):
     return [contact for contact in contacts if query.lower() in contact["name"].lower()]
 
 
-def filter_by_category(contacts, category):
+def filter_by_category(contacts, category) -> list:
     """
     Return all contacts in a specific category.
     
@@ -151,7 +150,7 @@ def filter_by_category(contacts, category):
     return [contact for contact in contacts if category.lower() == contact["category"].lower()]
 
 
-def find_by_phone(contacts, phone):
+def find_by_phone(contacts, phone) -> dict:
     """
     Find a contact by exact phone number.
     
@@ -297,32 +296,77 @@ def display_menu():
 
 def main():
     """Main function with interactive menu."""
-    contacts = []
     # TODO: Implement menu loop
     # Use while True and break on exit choice
     while True: 
         display_menu()
-        user_input = input("Select an option 1-6. Use 0 to exit")
+        user_input = input("Select an option 1-6. Use 0 to exit: ")
         
         if user_input == "1":
             display_all_contacts(contacts)
         if user_input == "2":
-            # add_contact(contacts, name, phone, email, category)
-            pass
+            name = input("Contact Full Name: ")
+            phone = input("Phone Number (format: XXX-XXX-XXXX): ")
+            email = input("Email Address: ")
+            print(""" --- Choose Category ---
+            1. friend
+            2. family
+            3. work
+            4. other
+            --------------------------""")
+            
+            while True: 
+                choice = input("Choice: ")
+                if choice == '1':
+                    category = 'friend'
+                    break
+                if choice == '2':
+                    category = 'family'
+                    break
+                if choice == '3':
+                    category = 'work'
+                    break
+                if choice == '4':
+                    category = 'other'
+                    break
+                
+            add_contact(contacts, name, phone, email, category)
+            print(f"New contact - {name} - added to book!")
         if user_input == "3":
-            # search_by_name(contacts, query)
-            # filter_by_category(contacts, category)
-            # find_by_phone(contacts, phone)
-            pass
+            search_input = input("Search by name, phone number, or category: ")
+            
+            if search_input in ['friend', 'family', 'work', 'other']:
+                display_all_contacts(filter_by_category(contacts, search_input))
+            elif search_input.count("-")  == 2:
+                display_contact_details(find_by_phone(contacts, search_input))
+            else:
+                display_all_contacts(search_by_name(contacts, search_input))
         if user_input == "4":
-            # update_contact(contacts, phone, field, new_value)
-            pass
+            display_all_contacts(contacts)
+            # Get the contact that user wants to update
+            contact_choice = input("Choose the contact you would like to update.\nContact's index number: ")
+            choice_phone_num = contacts[int(contact_choice) - 1]["phone"]
+            display_contact_details(contacts[int(contact_choice) - 1]) # Display chosen contact information
+            # Get the field user wants to update
+            field_choice = input("Would you like to update the name, phone, email, or category for this contact?\n Enter 'name', 'phone', 'email', 'category': ")
+            # Get the new value the user wants to put in the contact
+            new_value = input("Update value: ")
+            if update_contact(contacts, choice_phone_num, field_choice, new_value):
+                print("\nContact updated.")
+                display_contact_details(contacts[int(contact_choice) - 1]) # Display updated contact information
+            else:
+                print("Error updating contact. Please try again.")
         if user_input == "5":
-            # delete_contact(contacts, phone)
-            pass
+            display_all_contacts(contacts)
+            # Get the contact that user wants to delete
+            contact_choice = input("Choose the contact you would like to delete.\nContact's index number: ")
+            choice_phone_num = contacts[int(contact_choice) - 1]["phone"]
+            print(f"Deleting {contacts[int(contact_choice) - 1]["name"]} from contact book......")
+            delete_contact(contacts, choice_phone_num)
         if user_input == "6":
             display_statistics(contacts)
         if user_input == "0":
+            print('Closing contact book......')
             break
 
 
@@ -330,7 +374,7 @@ def main():
 # Test Code - Add sample data and test functions
 # =============================================================================
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     print("Contact Book Application")
     print("=" * 40)
     
@@ -362,4 +406,4 @@ if __name__ == "__main__":
     
     
     # STRETCH: Uncomment to run interactive menu
-    # main()
+    main()
