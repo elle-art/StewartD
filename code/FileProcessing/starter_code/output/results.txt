@@ -1,0 +1,22 @@
+=== Sales Processing Report ===
+
+Generated: 2026-03-05T09:17:27.317452
+        
+Processing Statistics:
+- Total records: 7
+- Valid records: 3
+- Error records: 4
+        
+Errors:
+- Line 2: Error INVALID_DATA: Date must be in YYYY-MM-DD format.
+- Line 3: Error INVALID_DATA: Quantity must be a positive integer.
+- Line 4: Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.
+- Line 5: Error INVALID_DATA: Quantity must be a number.
+
+Sales by Store:
+- STORE002: 49.99
+- STORE001: 59.98
+
+Top Products:
+1. Widget A: 22 units
+2. Gadget B: 5 units

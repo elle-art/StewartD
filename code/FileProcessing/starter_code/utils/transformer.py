@@ -1,14 +1,15 @@
 
-def calculate_totals(records: list) -> list:
+def calculate_totals(records: list[dict]) -> list:
     """
     Calculate line totals (quantity * price) for each record.
     Returns: Records with added 'total' field
     """
     for record in records: 
-        record["total"] = record["quantity"] * record["price"]
-        
+        record["total"] = round(record["quantity"] * record["price"], 2)
+    
+    return records
 
-def aggregate_by_store(records) -> dict:
+def aggregate_by_store(records: list[dict]) -> dict:
     """
     Aggregate sales by store_id.
     Returns: Dict mapping store_id to total sales
@@ -25,7 +26,7 @@ def aggregate_by_store(records) -> dict:
             
     return totals_per_store
 
-def aggregate_by_product(records):
+def aggregate_by_product(records: list[dict]) -> dict:
     """
     Aggregate sales by product.
     Returns: Dict mapping product to total quantity sold
@@ -36,14 +37,15 @@ def aggregate_by_product(records):
         product_total = 0
         for record in records:
             if record["product"] == product:
-                product_total += record["price"]
+                product_total += record["quantity"]
                 
         totals_per_product[product] = product_total
     
     return totals_per_product
 
-def get_unique_vals(records: list, field: str) -> set:
-    """helper function that create a set of all store_id in records
+def get_unique_vals(records: list[dict], field: str) -> set[any]:
+    """
+    Helper function that creates a set of all store_id in records.
 
     Args:
         records (list): list of dictionary objects

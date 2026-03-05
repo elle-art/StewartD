@@ -24,10 +24,10 @@ def read_csv_file(filepath: str) -> list[dict]:
     try:
         try: 
             with open(filepath, "r", encoding="utf-8") as f:
-                records = parse_to_list(f)
+                records = parse_to_list(f, records)
         except UnicodeDecodeError:
             with open(filepath, "r", encoding="latin-1") as f:
-                records = parse_to_list(f)
+                records = parse_to_list(f, records)
     except FileNotFoundError as e:
         logging.error("File not found at %s: %s", filepath, e)
         raise  
@@ -35,7 +35,7 @@ def read_csv_file(filepath: str) -> list[dict]:
     return records
 
 
-def parse_to_list(f: TextIOWrapper) -> list[dict]:
+def parse_to_list(f, records_list) -> list[dict]:
     """Helper function to parse .csv lines into a list of dictionary objects.
 
     Args:
@@ -44,21 +44,20 @@ def parse_to_list(f: TextIOWrapper) -> list[dict]:
     Returns:
         list[dict]: a list of dictionary object represented .csv records
     """
-    records = []
     # Read file line by line
     for i, line in enumerate(f):
         if i == 0: # Get columns form first line of .csv
-            keys = [column for column in line.split(",")]
+            keys = [column for column in line.strip().split(",")]
             if keys == []: # If first line empty, assume file empty and return an empty list
                 return []
-            
-        # Parse an entry line to a dictionary obj    
-        entry = line.split(",")
-        entry_as_dict = {}
-        for x, key in enumerate(keys):
-            entry_as_dict[key] = entry[x]
+        else:     
+            # Parse an entry line to a dictionary obj    
+            entry = line.strip().split(",")
+            entry_as_dict = {}
+            for x, key in enumerate(keys):
+                entry_as_dict[key] = entry[x]
+        
+            records_list.append(entry_as_dict) # Add new dictionary to records
     
-    records.append(entry_as_dict) # Add new dictionary to records
-    
-    return records
+    return records_list
 

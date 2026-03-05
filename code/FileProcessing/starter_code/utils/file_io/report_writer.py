@@ -1,4 +1,4 @@
-from exceptions import FileProcessingError # validates proper filepaths
+from ..exceptions import FileProcessingError # validates proper filepaths
 from datetime import datetime # used to add timestamp to reports
 
 
@@ -25,32 +25,46 @@ def write_summary_report(filepath: str, valid_records: list[dict], errors: list[
     with open(filepath, "w") as f:
         timestamp = datetime.now().isoformat()
 
-        f.write(f"\n--- {timestamp} SUMMARY REPORT ---\n")
-        f.write(f"Total Records: {total_records}")
-        f.write(f"Total Valid Records: {len(valid_records)}")
-        f.write(f"Total Errors: {len(errors)} ")
-        for err in errors:
-            f.write(f"{err}\n")
+        f.write(f"=== Sales Processing Report ===\n")
+        f.write(
+        f"""
+Generated: {timestamp}
         
-        f.write(f"Sales by Store: \n{sales_per_store}")
-        f.write("Top 5 products")
-
-        for i in range(5):
-            f.write(f"{sales_per_product[i]}")
+Processing Statistics:
+- Total records: {total_records}
+- Valid records: {len(valid_records)}
+- Error records: {len(errors)}
+        """)
+        f.write(f"\nErrors:\n")
+        for err in errors:
+            f.write(f"- Line {err["line_number"]}: {err["error"]}\n")
+        f.write(f"\nSales by Store:\n")
+        for store, total in sales_per_store.items():
+            f.write(f"- {store}: {total}\n")
+        f.write("\nTop Products:\n")
+        for i, (product, quantity) in enumerate(sales_per_product.items()):
+            f.write(f"{i + 1}. {product}: {quantity} units\n")
 
 def write_clean_csv(filepath: str, records: list[dict]) -> None:
     """
     Write validated records to a clean CSV file.
     """
+    added_col_headers = False
     # Checks if .csv is the file extension
     if not filepath.endswith(".csv"):
         raise FileProcessingError(filepath, "CSV file must have a .csv extension")
     
     # Writes to CSV file
     with open(filepath, "w") as f:
-        f.write(f"Total Valid Records: {len(records)}")
         for record in records:
-            f.write(f"{record}\n ")
+            csv_str = ''
+            for key, val in record.items():
+                if not added_col_headers: 
+                    f.write(f"{key},")                    
+                csv_str += (f"{val},")
+            f.write(f"\n")
+            added_col_headers = True # Makes flag True after keys have been printed
+            f.write(f"{csv_str}")
 
 def write_error_log(filepath: str, errors: list[dict]) -> None:
     """
@@ -62,8 +76,8 @@ def write_error_log(filepath: str, errors: list[dict]) -> None:
     
     # Appends to error log file
     with open(filepath, "a") as f:
-        timestamp = datetime.now().isoformat()
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         f.write(f"\n--- Error batch at {timestamp} ---\n")
-        f.write(f"Total Errors: {len(errors)}")
+        f.write(f"Total Errors: {len(errors)}\n")
         for err in errors:
             f.write(f"{err}\n")

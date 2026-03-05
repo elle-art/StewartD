@@ -1,0 +1,129 @@
+
+--- Error batch at 2026-03-04 21:53:01 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T21:53:01.815502', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T21:53:01.815533', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T21:53:01.815551', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 21:54:56 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T21:54:56.895384', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T21:54:56.895410', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T21:54:56.895426', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 21:57:28 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T21:57:28.301503', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T21:57:28.301538', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T21:57:28.301565', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:00:16 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:00:16.505736', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:00:16.505814', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:00:16.505831', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:05:12 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:05:12.871376', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:05:12.871411', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:05:12.871435', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:10:20 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:10:20.800454', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:10:20.800482', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:10:20.800499', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:12:59 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:12:59.213066', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:12:59.213092', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:12:59.213108', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:13:17 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:13:17.087048', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:13:17.087076', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:13:17.087092', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:15:39 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:15:39.730915', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:15:39.730943', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:15:39.730959', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:16:22 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:16:22.656415', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:16:22.656462', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:16:22.656494', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:18:11 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:18:11.768677', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:18:11.768704', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:18:11.768719', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:20:00 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:20:00.950061', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:20:00.950094', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:20:00.950112', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:20:51 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:20:51.510939', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:20:51.510967', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:20:51.510986', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-04 22:22:32 ---
+Total Errors: 3
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-04T22:22:32.071064', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-04T22:22:32.071092', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-04T22:22:32.071108', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-05 09:08:41 ---
+Total Errors: 4
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-05T09:08:41.652680', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-05T09:08:41.652770', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': '', 'product': 'Product X', 'quantity': '8', 'price': '15.00', 'line_number': 4, 'timestamp': '2026-03-05T09:08:41.652783', 'error': 'Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-05T09:08:41.652819', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-05 09:09:33 ---
+Total Errors: 4
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-05T09:09:33.039851', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-05T09:09:33.039925', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': '', 'product': 'Product X', 'quantity': '8', 'price': '15.00', 'line_number': 4, 'timestamp': '2026-03-05T09:09:33.039935', 'error': 'Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-05T09:09:33.039963', 'error': "invalid literal for int() with base 10: 'abc'"}
+
+--- Error batch at 2026-03-05 09:11:06 ---
+Total Errors: 4
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-05T09:11:06.650161', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-05T09:11:06.650243', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': '', 'product': 'Product X', 'quantity': '8', 'price': '15.00', 'line_number': 4, 'timestamp': '2026-03-05T09:11:06.650255', 'error': 'Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-05T09:11:06.650284', 'error': 'Error INVALID_DATA: Quantity must be a number.'}
+
+--- Error batch at 2026-03-05 09:13:19 ---
+Total Errors: 7
+{'date': '2024-01-15', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '10', 'price': '29.99', 'line_number': 0, 'timestamp': '2026-03-05T09:13:19.460314', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+{'date': '2024-01-15', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': '5', 'price': '49.99', 'line_number': 1, 'timestamp': '2026-03-05T09:13:19.460400', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-05T09:13:19.460414', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': '-2', 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-05T09:13:19.460423', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+{'date': '2024-01-16', 'store_id': '', 'product': 'Product X', 'quantity': '8', 'price': '15.00', 'line_number': 4, 'timestamp': '2026-03-05T09:13:19.460435', 'error': 'Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-05T09:13:19.460444', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+{'date': '2024-01-17', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '12', 'price': '29.99', 'line_number': 6, 'timestamp': '2026-03-05T09:13:19.460456', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+
+--- Error batch at 2026-03-05 09:15:27 ---
+Total Errors: 4
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-05T09:15:27.802514', 'error': "time data 'invalid-date' does not match format '%Y-%m-%d'"}
+{'date': datetime.datetime(2024, 1, 16, 0, 0), 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-05T09:15:27.802588', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': '', 'product': 'Product X', 'quantity': '8', 'price': '15.00', 'line_number': 4, 'timestamp': '2026-03-05T09:15:27.802599', 'error': 'Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.'}
+{'date': datetime.datetime(2024, 1, 16, 0, 0), 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-05T09:15:27.802628', 'error': 'Error INVALID_DATA: Quantity must be a number.'}
+
+--- Error batch at 2026-03-05 09:17:27 ---
+Total Errors: 4
+{'date': 'invalid-date', 'store_id': 'STORE001', 'product': 'Widget A', 'quantity': '3', 'price': '29.99', 'line_number': 2, 'timestamp': '2026-03-05T09:17:27.316570', 'error': 'Error INVALID_DATA: Date must be in YYYY-MM-DD format.'}
+{'date': '2024-01-16', 'store_id': 'STORE003', 'product': 'Widget C', 'quantity': -2.0, 'price': '19.99', 'line_number': 3, 'timestamp': '2026-03-05T09:17:27.316639', 'error': 'Error INVALID_DATA: Quantity must be a positive integer.'}
+{'date': '2024-01-16', 'store_id': '', 'product': 'Product X', 'quantity': '8', 'price': '15.00', 'line_number': 4, 'timestamp': '2026-03-05T09:17:27.316650', 'error': 'Error MISSING_FIELD: Value at store_id is empty. Ensure there is a value in each column.'}
+{'date': '2024-01-16', 'store_id': 'STORE002', 'product': 'Gadget B', 'quantity': 'abc', 'price': '49.99', 'line_number': 5, 'timestamp': '2026-03-05T09:17:27.316677', 'error': 'Error INVALID_DATA: Quantity must be a number.'}

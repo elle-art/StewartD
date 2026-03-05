@@ -6,10 +6,10 @@ class FileProcessingError(Exception):
 
 class InvalidDataError(FileProcessingError):
     """Raised when data validation fails."""
-    def __init__(self, filename, detail):
-        super().__init__(filename, f"Invalid data: {detail}")
+    def __init__(self, detail):
+        super(Exception, self).__init__(f"Error INVALID_DATA: {detail}")
 
 class MissingFieldError(FileProcessingError):
     """Raised when a required field is missing."""
-    def __init__(self, filename, field):
-        super().__init__(filename, f"Missing required field: {field}")
+    def __init__(self, field):
+        super(Exception, self).__init__(f"Error MISSING_FIELD: {field}")
