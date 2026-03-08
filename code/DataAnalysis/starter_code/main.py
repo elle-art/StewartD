@@ -1,8 +1,4 @@
 """
-main.py -------------
-1. Loads the data
-2. Cleans and transforms it
-3. Runs all analyses
 4. Generates all visualizations
 5. Prints a summary report to console
 
@@ -14,22 +10,31 @@ main.py -------------
 - [ ] All analysis functions return correct results
 - [ ] At least 4 visualizations are created
 - [ ] Dashboard displays all key metrics
-- [ ] At least 8 tests pass
 - [ ] Main script runs end-to-end
 
-## Stretch Goals (Optional)
-
-1. Add interactive visualizations with plotly
-2. Calculate month-over-month growth rates
-3. Identify customer segments using clustering
-4. Export results to an Excel file with multiple sheets
 
 ---
-
-## Submission
-
-1. Run the complete analysis pipeline
-2. Save all visualizations to `output/` directory
-3. Run tests and ensure all pass
-4. Be prepared to explain your findings
 """
+from analysis import *
+from visualizations import *
+
+def main(input_path, output_dir):
+    data = load_data(input_path)
+    explore_data(data)
+    
+    category = sales_by_category(data)
+    region = sales_by_region(data)
+    products = top_products(data)
+    daily = daily_sales_trend(data)
+    customer = customer_analysis(data)
+    week = weekend_vs_weekday(data)
+
+    create_category_bar_chart(category, f"{output_dir}/category.png")
+    create_regional_pie_chart(region, f"{output_dir}/region.png")
+    create_sales_trend_line(daily, f"{output_dir}/daily.png")
+    create_dashboard(f"{output_dir}")
+
+if __name__ == "__main__":
+    # Process from command line
+    main("utils/orders.csv", "output")
+    print("Output successfully created at ./output/") #might need exceptions here

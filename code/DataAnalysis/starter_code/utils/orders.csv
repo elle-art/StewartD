@@ -1,0 +1,14 @@
+order_id,customer_id,order_date,product_name,category,quantity,unit_price,region
+1001 , C001,2024/01/05,Laptop Pro,Electronics,1,1299.99,North
+1002,C002 ,01-05-2024,Wireless Mouse ,electronics,2 ,29.99 , South
+1003,C001,2024-01-06,USB Cable,Accessories,three,9.99,North
+1004,C003,2024-13-01,Phone Case,Accessories,1,12.5, West
+1005,,2024-01-07,Monitor HD,Electronics,2,199.99,
+1002,C002,2024-01-05,Wireless Mouse,Electronics,2,29.99,South
+ABC6,C004,2024-01-08,Keyboard,,1,49.99,East
+1007,C005,2024-01-09,,Electronics,1,89.99,South
+1008,C006,2024-01-10,USB Cable,Accessories,-2,9.99,North
+1009,C007,2024-01-11,Laptop Pro,Electronics,1,1299.9O,North
+1010,C008,2024-01-12,Mousepad,Accessories, 1 ,five,South
+1011,C009,2024-01-12,"Laptop, Pro",Electronics,1,1299.99,North
+1012,C010,2024-01-12,Phone Charger,Accessories,1,12.99,UnknownRegion
