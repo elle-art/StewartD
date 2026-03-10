@@ -9,7 +9,11 @@ def read_lines(filepath, encoding='utf-8'):
         for line in read_lines('large_file.txt'):
             process(line)
     """
-    pass
+    with open(filepath, 'r') as file:
+        for line in file:
+            stripped_line = line.strip()
+            if stripped_line: # empty lines are False
+                yield line.strip()
 
 def batch(iterable, size):
     """
@@ -19,7 +23,13 @@ def batch(iterable, size):
         list(batch([1,2,3,4,5,6,7], 3))
         # [[1,2,3], [4,5,6], [7]]
     """
-    pass
+    while iterable:
+        my_batch = []
+        for _ in range(size):
+            if not iterable:
+                break
+            my_batch.append(iterable.pop(0))
+        yield my_batch
 
 def filter_by(iterable, predicate):
     """
@@ -29,4 +39,4 @@ def filter_by(iterable, predicate):
         evens = filter_by(range(10), lambda x: x % 2 == 0)
         list(evens)  # [0, 2, 4, 6, 8]
     """
-    pass
+    return (x for x in iterable if predicate(x))

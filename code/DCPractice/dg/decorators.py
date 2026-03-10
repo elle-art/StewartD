@@ -12,7 +12,14 @@ def timer(func):
     
     Output: "slow_function took 1.0023 seconds"
     """
-    pass
+    @wraps(func)
+    def timer_wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end - start} seconds")
+        return result
+    return timer_wrapper
 
 def logger(func):
     """
@@ -29,7 +36,17 @@ def logger(func):
         "Calling add(2, 3)"
         "add returned 5"
     """
-    pass
+    @wraps(func)
+    def logger_wrapper(*args, **kwargs):
+        args_list = [repr(a) for a in args] # repr is used to give full obj identity
+        kwarg = [f"{k}={v!r}" for k, v in kwargs] # !r is another way of saying repr(v)
+        all_args = ",".join(args_list, kwargs)
+        
+        print(f"Calling {func.__name__} ({all_args})")
+        result = func(*args, **kwargs)
+        print(f"{func.__name__} returned {result!r}")
+        return result
+    return logger_wrapper
 
 def retry(max_attempts=3, delay=1, exceptions=(Exception,)):
     """
@@ -46,7 +63,19 @@ def retry(max_attempts=3, delay=1, exceptions=(Exception,)):
             # might fail sometimes
             pass
     """
-    pass
+    def retry_decorator(func):
+        @wraps(func)
+        def retry_wrapper(*args, **kwargs):
+            for attempt in range(max_attempts):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    if attempt == max_attempts - 1:
+                        raise exceptions
+                    print(f"Attempt {attempt + 1} failed, retrying...")
+                    time.sleep(delay)
+        return retry_wrapper
+    return retry_decorator
 
 def cache(max_size=128):
     """
@@ -65,4 +94,34 @@ def cache(max_size=128):
         expensive_computation.cache_info()
         expensive_computation.cache_clear()
     """
-    pass
+    def cache_decorator(func):
+        cache = {}
+        @wraps(func)
+        def cache_wrapper(*args, **kwargs):
+            key = (args, tuple(kwargs.items()))
+            if key in cache:
+                return cache[key]
+            
+            result = func(*args,**kwargs)
+            if len(cache) >= max_size:
+                cache.pop(next(iter(cache)))
+            
+            cache[key] = result
+            return result
+        
+        
+        def cache_info():
+            return {
+                "size": len(cache),
+                "max_size": max_size,
+                "keys": list(cache.keys())
+            }
+
+        def cache_clear():
+            cache.clear()
+
+        cache_wrapper.cache_info = cache_info
+        cache_wrapper.cache_clear = cache_clear
+        
+        return cache_wrapper
+    return cache_decorator
