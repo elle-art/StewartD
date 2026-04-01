@@ -10,16 +10,18 @@ class DefectDataset(Dataset):
     """
     def __init__(self, image_paths, labels, transform=None):
         # TODO: Store the arguments as instance variables
-        pass
+        self.image_paths = image_paths
+        self.labels = labels
+        self.transform = transform
 
     def __len__(self):
         # TODO: Return the total number of samples
-        return 0
+        return len(self.image_paths)
 
     def __getitem__(self, idx):
         # 1. Get the path and label at the specified index
-        path = None # TODO
-        label = None # TODO
+        path = self.image_paths[idx] # TODO
+        label = self.labels[idx] # TODO
         
         # Simulating loading a PIL image from disk (Random colored square)
         # In reality this would be: image = Image.open(path).convert('RGB')
@@ -27,10 +29,12 @@ class DefectDataset(Dataset):
         
         # 2. Apply the transform if one was provided
         # TODO
+        if self.transform:
+            image_tensor = self.transform(raw_image)
             
         # 3. Return the transformed image and the label as a tensor (float32)
         # TODO
-        return None, None
+        return image_tensor, label
 
 
 def build_pipeline():
@@ -45,21 +49,27 @@ def build_pipeline():
     
     # 1. Define the TorchVision Transforms
     # TODO: Compose Resize(128, 128), ToTensor(), and Normalize(mean, std)
-    data_transform = None
+    data_transform = transforms.Compose([
+        transforms.Resize((128,128)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    ])
     
     # 2. Instantiate the Custom Dataset
     # TODO
-    dataset = None
+    dataset = DefectDataset(mock_paths, mock_labels, data_transform)
     print(f"Dataset securely loaded with {len(dataset)} items.") # Should print 100
     
     # 3. Instantiate the DataLoader
     # TODO: Batch size of 16, shuffle enabled
-    dataloader = None
+    dataloader = DataLoader(dataset, batch_size=16, shuffle=True, num_workers=2)
     
     print("\n--- Iterating Pipeline ---")
     # 4. Iterate over the DataLoader for one "epoch"
     # TODO: Loop through dataloader enum and print the shape of the images
     # Example Expected Output: "Batch 1 - Images Shape: torch.Size([16, 3, 128, 128])"
+    for i, (batch_imgs, batch_labels) in enumerate(dataloader, start=1):
+        print(f'Batch {i} - Images Shape: {batch_imgs.shape}')
     
 
 if __name__ == "__main__":
