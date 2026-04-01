@@ -1,8 +1,8 @@
 """Entry point for the task manager CLI."""
 
-from task_manager.models.task import Task
-from task_manager.utils.formatters import format_task_list, format_task_detail
-from task_manager.utils.validators import validate_title, ValidationError
+from DataAndPy.ToDoManager.task_manager.models.task import Task
+from DataAndPy.ToDoManager.task_manager.utils.formatters import format_task_list, format_task_detail
+from DataAndPy.ToDoManager.task_manager.utils.validators import validate_title, ValidationError
 
 
 def print_welcome():

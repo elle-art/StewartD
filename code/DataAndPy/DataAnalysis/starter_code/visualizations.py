@@ -1,6 +1,6 @@
 import os
 import matplotlib.pyplot as plt
-from analysis import add_time_features
+from DataAndPy.DataAnalysis.starter_code.analysis import add_time_features
 
 def create_category_bar_chart(category_data, output_path):
     """

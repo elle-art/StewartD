@@ -1,7 +1,7 @@
-from utils.file_io.file_reader import read_csv_file
-from utils.validator import validate_all_records
-from utils.transformer import calculate_totals, aggregate_by_product, aggregate_by_store
-from utils.file_io.report_writer import write_summary_report, write_clean_csv, write_error_log
+from DataAndPy.FileProcessing.starter_code.utils.file_io.file_reader import read_csv_file
+from DataAndPy.FileProcessing.starter_code.utils.validator import validate_all_records
+from DataAndPy.FileProcessing.starter_code.utils.transformer import calculate_totals, aggregate_by_product, aggregate_by_store
+from DataAndPy.FileProcessing.starter_code.utils.file_io.report_writer import write_summary_report, write_clean_csv, write_error_log
 
 """
 ## Definition of Done

@@ -1,4 +1,4 @@
-from utils.exceptions import InvalidDataError, MissingFieldError # used in validate_sales_record()
+from DataAndPy.FileProcessing.starter_code.utils.exceptions import InvalidDataError, MissingFieldError # used in validate_sales_record()
 from datetime import datetime # used to add timestamp to errors found in validate_all_records()
 
 def validate_sales_record(record: dict) -> dict:

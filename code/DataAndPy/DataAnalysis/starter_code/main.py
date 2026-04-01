@@ -15,8 +15,8 @@
 
 ---
 """
-from analysis import *
-from visualizations import *
+from DataAndPy.DataAnalysis.starter_code.analysis import *
+from DataAndPy.DataAnalysis.starter_code.visualizations import *
 
 def main(input_path, output_dir):
     data = load_data(input_path)

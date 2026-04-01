@@ -1,5 +1,5 @@
 import pytest
-from DCPractice.dg.generators import read_lines, batch, filter_by
+from DataAndPy.DCPractice.dg.generators import read_lines, batch, filter_by
 
 def test_batch_correct_sizes():
     """Batch should yield correct batch sizes."""

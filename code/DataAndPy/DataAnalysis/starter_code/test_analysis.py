@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from analysis import *
+from DataAndPy.DataAnalysis.starter_code.analysis import *
 
 @pytest.fixture
 def sample_data():

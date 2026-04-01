@@ -1,6 +1,6 @@
-from DCPractice.dg.decorators import timer, logger, cache
-from DCPractice.dg.generators import read_lines, batch, filter_errors
-from pipeline import create_pipeline
+from DataAndPy.DCPractice.dg.decorators import timer, logger, cache
+from DataAndPy.DCPractice.dg.generators import read_lines, batch, filter_errors
+from DataAndPy.DCPractice.pipeline import create_pipeline
 
 @timer
 @logger
